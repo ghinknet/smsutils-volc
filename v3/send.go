@@ -1,6 +1,8 @@
 package volc
 
 import (
+	"strconv"
+
 	"github.com/ghinknet/smsutils/v3/errors"
 	"github.com/ghinknet/smsutils/v3/model"
 	"github.com/ghinknet/smsutils/v3/utils"
@@ -40,14 +42,14 @@ func (c Client) SendMessage(dest string, sender string, template string, vars mo
 	if statusCode != 200 {
 		return errors.ErrDriverSendFailed.
 			WithDriverName(Name).
-			WithDriverCode(statusCode).
+			WithDriverCode(strconv.Itoa(statusCode)).
 			WithDriverRequestID(result.ResponseMetadata.RequestId).
 			WithDriverResponse(result)
 	}
 	if result.ResponseMetadata.Error != nil {
 		return errors.ErrDriverSendFailed.
 			WithDriverName(Name).
-			WithDriverCode(statusCode).
+			WithDriverCode(strconv.Itoa(statusCode)).
 			WithDriverMessage(result.ResponseMetadata.Error.Message).
 			WithDriverRequestID(result.ResponseMetadata.RequestId).
 			WithDriverResponse(result)
