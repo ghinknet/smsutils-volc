@@ -11,7 +11,7 @@ import (
 
 func (c Client) SendMessage(dest string, sender string, template string, vars model.Vars) error {
 	// Try to parse number
-	to, _, _, _, err := utils.ProcessNumberForChinese(dest)
+	dest, _, _, _, err := utils.ProcessNumberForChinese(dest)
 
 	// Preprocess vars
 	params := make(map[string]string)
@@ -31,7 +31,7 @@ func (c Client) SendMessage(dest string, sender string, template string, vars mo
 		Sign:          sender,
 		TemplateID:    template,
 		TemplateParam: string(marshalledParam),
-		PhoneNumbers:  to,
+		PhoneNumbers:  dest,
 	}
 
 	// Send request

@@ -20,7 +20,7 @@ func (d Driver) NewClient(params model.DriverClientParam) (model.Client, error) 
 	// Check credential
 	ak, sk := params.Credential[AccessKey], params.Credential[SecretKey]
 	if ak == "" || sk == "" {
-		return Client{}, errors.ErrDriverCredentialInvalid
+		return Client{}, errors.ErrDriverCredentialInvalid.WithDriverName(Name)
 	}
 
 	// Create volc client
