@@ -12,6 +12,9 @@ import (
 func (c Client) SendMessage(dest string, sender string, template string, vars model.Vars) error {
 	// Try to parse number
 	dest, _, _, _, err := utils.ProcessNumberForChinese(dest)
+	if err != nil {
+		return err
+	}
 
 	// Preprocess vars
 	params := make(map[string]string)
