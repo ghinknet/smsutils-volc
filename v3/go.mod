@@ -3,7 +3,7 @@ module github.com/ghinknet/smsutils-volc/v3
 go 1.25.0
 
 require (
-	github.com/ghinknet/smsutils/v3 v3.0.0-20260417055107-396af606dbd3
+	github.com/ghinknet/smsutils/v3 v3.0.0
 	github.com/volcengine/volc-sdk-golang v1.0.242
 )
 
