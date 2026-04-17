@@ -38,17 +38,17 @@ func (c Client) SendMessage(dest string, sender string, template string, vars mo
 		return err
 	}
 	if statusCode != 200 {
-		if result.ResponseMetadata.Error != nil {
-			return errors.ErrDriverSendFailed.
-				WithDriverName(DriverName).
-				WithDriverCode(statusCode).
-				WithDriverMessage(result.ResponseMetadata.Error.Message).
-				WithDriverRequestID(result.ResponseMetadata.RequestId).
-				WithDriverResponse(result)
-		}
 		return errors.ErrDriverSendFailed.
-			WithDriverName(DriverName).
+			WithDriverName(Name).
 			WithDriverCode(statusCode).
+			WithDriverRequestID(result.ResponseMetadata.RequestId).
+			WithDriverResponse(result)
+	}
+	if result.ResponseMetadata.Error != nil {
+		return errors.ErrDriverSendFailed.
+			WithDriverName(Name).
+			WithDriverCode(statusCode).
+			WithDriverMessage(result.ResponseMetadata.Error.Message).
 			WithDriverRequestID(result.ResponseMetadata.RequestId).
 			WithDriverResponse(result)
 	}
