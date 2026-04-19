@@ -3,13 +3,13 @@ module github.com/ghinknet/smsutils-volc/v3
 go 1.25.0
 
 require (
-	github.com/ghinknet/smsutils/v3 v3.1.0
+	github.com/ghinknet/smsutils/v3 v3.1.1
 	github.com/volcengine/volc-sdk-golang v1.0.242
 )
 
 require (
 	github.com/cenkalti/backoff/v4 v4.3.0 // indirect
-	github.com/ghinknet/toolbox v1.10.0 // indirect
+	github.com/ghinknet/toolbox v1.11.1 // indirect
 	github.com/google/go-querystring v1.2.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/nyaruka/phonenumbers v1.7.1 // indirect
