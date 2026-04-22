@@ -1,10 +1,10 @@
 package volc
 
 import (
-	"github.com/ghinknet/smsutils/v3/errors"
-	"github.com/ghinknet/smsutils/v3/model"
 	"github.com/volcengine/volc-sdk-golang/base"
 	"github.com/volcengine/volc-sdk-golang/service/sms"
+	"go.gh.ink/smsutils/v3/errors"
+	"go.gh.ink/smsutils/v3/model"
 )
 
 type Client struct {

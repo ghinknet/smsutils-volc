@@ -3,10 +3,10 @@ package volc
 import (
 	"strconv"
 
-	"github.com/ghinknet/smsutils/v3/errors"
-	"github.com/ghinknet/smsutils/v3/model"
-	"github.com/ghinknet/smsutils/v3/utils"
 	"github.com/volcengine/volc-sdk-golang/service/sms"
+	"go.gh.ink/smsutils/v3/errors"
+	"go.gh.ink/smsutils/v3/model"
+	"go.gh.ink/smsutils/v3/utils"
 )
 
 func (c Client) SendMessage(dest string, sender string, template string, vars model.Vars) error {
